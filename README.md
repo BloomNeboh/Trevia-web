@@ -18,19 +18,3 @@ Includes:
 Designed to be hosted via **GitHub Pages** or any static site host.
 
 ---
-
-## Getting Started
-
-### Prerequisites
-
-- Git  
-- Basic text editor (VS Code, Sublime, etc.)  
-- Web browser for previewing  
-
-### Installation / Setup
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/<your-username>/trevia.git
-   cd trevia
