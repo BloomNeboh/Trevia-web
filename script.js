@@ -44,7 +44,7 @@ bookingForm?.addEventListener('submit', (e) => {
     <p><strong>Destination:</strong> ${escapeHtml(dest)}</p>
     <p><strong>Arrival:</strong> ${escapeHtml(arrival)} · <strong>Nights:</strong> ${escapeHtml(nights)}</p>
     <p><strong>Travelers:</strong> ${escapeHtml(adults)} adults · ${escapeHtml(children)} children</p>
-    <p>We’ll email you a custom proposal within 48 hours. For production, hook this form to your backend or form service.</p>
+    <p>We will email you a custom proposal within 48 hours. For production, hook this form to your backend or form service.</p>
     <button id="modalOk" class="btn">Okay</button>
   `;
   openModal();
@@ -77,3 +77,11 @@ contactForm?.addEventListener('submit', (e) => {
   contactForm.reset();
 });
 
+const header = document.querySelector('.site-header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('sticky-bg');
+  } else {
+    header.classList.remove('sticky-bg');
+  }
+});
