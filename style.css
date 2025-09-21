@@ -27,6 +27,13 @@ body{
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .logo{font-family:'Playfair Display', serif;font-size:1.2rem;color:#0b1220;text-decoration:none;font-weight:700}
 .logo .tag{font-size:.8rem;color:var(--muted);margin-left:8px}
+.site-header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.site-header.sticky-bg {
+  background-color: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
 /* nav */
 .nav{display:flex;gap:16px;align-items:center}
