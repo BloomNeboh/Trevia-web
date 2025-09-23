@@ -159,6 +159,44 @@
     <div class="swiper-button-prev"></div>
   </div>
 </section>
+<section id="gallery" class="py-16 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center text-yellow-600">Gallery</h2>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="assets/gallery1.jpg" alt="Gallery 1" class="rounded shadow-lg w-full">
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/gallery2.jpg" alt="Gallery 2" class="rounded shadow-lg w-full">
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/gallery3.jpg" alt="Gallery 3" class="rounded shadow-lg w-full">
+        </div>
+        <!-- Add more slides here -->
+      </div>
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination"></div>
+      <!-- Navigation Arrows -->
+      <div class="swiper-button-next text-yellow-600"></div>
+      <div class="swiper-button-prev text-yellow-600"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Add this at the bottom before </body> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    autoplay: { delay: 4000, disableOnInteraction: false },
+  });
+</script>
 
 <body>
   <header id="header">
