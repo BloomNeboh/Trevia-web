@@ -14,7 +14,3 @@ Includes:
 - Traveler reviews rotator  
 - Contact form  
 - Responsive layout (desktop, tablet, mobile)  
-
-Designed to be hosted via **GitHub Pages** or any static site host.
-
----
