@@ -189,7 +189,23 @@
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: info@trevia.com | Phone: +255 700 000 000</p>
-  </section>
+  </section><section id="gallery">
+  <h2>Gallery</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="assets/gallery1.jpg" alt="Gallery 1"></div>
+      <div class="swiper-slide"><img src="assets/gallery2.jpg" alt="Gallery 2"></div>
+      <div class="swiper-slide"><img src="assets/gallery3.jpg" alt="Gallery 3"></div>
+      <!-- Add more slides here -->
+    </div>
+    <!-- Pagination Dots -->
+    <div class="swiper-pagination"></div>
+    <!-- Navigation Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
 
   <footer>
     <p>&copy; 2025 Trevia. Travel Made Timeless.</p>
@@ -205,6 +221,14 @@
         header.classList.remove('scrolled');
       }
     });
-  </script>
+  </script><script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    autoplay: { delay: 3000, disableOnInteraction: false },
+  });
+</script>
+
 </body>
 </html>
