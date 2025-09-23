@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trevia - Travel Made Timeless</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
   <style>
     body {
       margin: 0;
@@ -44,7 +48,7 @@
 
     /* Hero Section */
     #hero {
-      background: url('hero-image.jpg') center/cover no-repeat;
+      background: url('assets/hero-image.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
       display: flex;
@@ -69,14 +73,8 @@
       animation: fadeInUp 1.5s ease forwards;
     }
 
-    #hero h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
-    #hero p {
-      font-size: 1.3em;
-    }
+    #hero h1 { font-size: 3em; margin-bottom: 10px; }
+    #hero p { font-size: 1.3em; }
 
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
@@ -110,163 +108,114 @@
       transition: transform 0.3s ease;
     }
 
-    .tour-card:hover {
-      transform: translateY(-8px);
-    }
+    .tour-card:hover { transform: translateY(-8px); }
+    .tour-card img { width: 100%; height: 200px; object-fit: cover; }
+    .tour-card h3 { margin: 15px; }
+    .tour-card p { margin: 0 15px 20px; }
 
-    .tour-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .tour-card h3 {
-      margin: 15px;
-    }
-
-    .tour-card p {
-      margin: 0 15px 20px;
-    }
+    /* Gallery */
+    .swiper-slide img { width: 100%; border-radius: 12px; }
 
     /* Footer */
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
+    footer { background: #333; color: #fff; text-align: center; padding: 20px; }
 
     /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
   </style>
-</head><!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="assets/gallery1.jpg" alt="Gallery 1"></div>
-      <div class="swiper-slide"><img src="assets/gallery2.jpg" alt="Gallery 2"></div>
-      <div class="swiper-slide"><img src="assets/gallery3.jpg" alt="Gallery 3"></div>
-      <!-- Add more slides here -->
-    </div>
-    <!-- Pagination Dots -->
-    <div class="swiper-pagination"></div>
-    <!-- Navigation Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-</section>
-<section id="gallery" class="py-16 bg-gray-100">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-8 text-center text-yellow-600">Gallery</h2>
-
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="assets/gallery1.jpg" alt="Gallery 1" class="rounded shadow-lg w-full">
-        </div>
-        <div class="swiper-slide">
-          <img src="assets/gallery2.jpg" alt="Gallery 2" class="rounded shadow-lg w-full">
-        </div>
-        <div class="swiper-slide">
-          <img src="assets/gallery3.jpg" alt="Gallery 3" class="rounded shadow-lg w-full">
-        </div>
-        <!-- Add more slides here -->
-      </div>
-      <!-- Pagination Dots -->
-      <div class="swiper-pagination"></div>
-      <!-- Navigation Arrows -->
-      <div class="swiper-button-next text-yellow-600"></div>
-      <div class="swiper-button-prev text-yellow-600"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Add this at the bottom before </body> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper(".mySwiper", {
-    loop: true,
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-    autoplay: { delay: 4000, disableOnInteraction: false },
-  });
-</script>
-
+</head>
 <body>
+
+  <!-- Header -->
   <header id="header">
     <div>Trevia</div>
     <nav>
       <a href="#hero">Home</a>
       <a href="#about">About</a>
       <a href="#tours">Tours</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section id="hero">
     <h1>Travel Made Timeless</h1>
     <p>Unforgettable safaris & adventures await you</p>
   </section>
 
+  <!-- About Section -->
   <section id="about">
     <h2>About Trevia</h2>
     <p>Trevia is dedicated to crafting unforgettable journeys across Tanzania and beyond. We combine local expertise with timeless adventures.</p>
   </section>
 
+  <!-- Tours Section -->
   <section id="tours">
     <h2>Featured Tours</h2>
     <div class="tours-grid">
       <div class="tour-card">
-        <img src="tour1.jpg" alt="Serengeti Safari">
+        <img src="assets/tour1.jpg" alt="Serengeti Safari">
         <h3>Serengeti Safari</h3>
         <p>Witness the Great Migration and explore Tanzania’s wildlife paradise.</p>
       </div>
       <div class="tour-card">
-        <img src="tour2.jpg" alt="Ngorongoro Crater">
+        <img src="assets/tour2.jpg" alt="Ngorongoro Crater">
         <h3>Ngorongoro Crater</h3>
         <p>Discover the world’s largest volcanic caldera filled with wildlife.</p>
       </div>
       <div class="tour-card">
-        <img src="tour3.jpg" alt="Zanzibar Getaway">
+        <img src="assets/tour3.jpg" alt="Zanzibar Getaway">
         <h3>Zanzibar Getaway</h3>
         <p>Relax on white sandy beaches and dive into rich cultural heritage.</p>
       </div>
     </div>
   </section>
 
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/gallery1.jpg" alt="Gallery 1"></div>
+        <div class="swiper-slide"><img src="assets/gallery2.jpg" alt="Gallery 2"></div>
+        <div class="swiper-slide"><img src="assets/gallery3.jpg" alt="Gallery 3"></div>
+      </div>
+      <!-- Pagination & Arrows -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next text-yellow-600"></div>
+      <div class="swiper-button-prev text-yellow-600"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: info@trevia.com | Phone: +255 700 000 000</p>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Trevia. Travel Made Timeless.</p>
   </footer>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Scripts -->
   <script>
-    // Sticky header color change on scroll
+    // Sticky header color change
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      header.classList.toggle('scrolled', window.scrollY > 50);
     });
-  </script><script>
-  const swiper = new Swiper(".mySwiper", {
-    loop: true,
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-    autoplay: { delay: 3000, disableOnInteraction: false },
-  });
-</script>
 
+    // Initialize Swiper
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      autoplay: { delay: 4000, disableOnInteraction: false },
+    });
+  </script>
 </body>
 </html>
