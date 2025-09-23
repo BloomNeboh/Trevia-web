@@ -1,307 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trevia — Travel Made Timeless</title>
-  <meta name="description" content="Trevia — curated Tanzania safaris, coffee tours, and cultural stays. Travel Made Timeless." />
-
-  <!-- Tailwind via CDN for quick production-like styling (replace with build pipeline later) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS for scroll animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- GLightbox for gallery -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-
-  <style>
-    :root{--accent:#c57b2a;--deep:#2b2b2b}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
-    .hero-bg{background-image:linear-gradient(180deg,rgba(0,0,0,0.25),rgba(0,0,0,0.25)),url('/assets/hero-large.jpg');background-size:cover;background-position:center}
-    /* subtle fancy */
-    .card-shadow{box-shadow:0 10px 30px rgba(37,34,29,0.08)}
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
-<body class="bg-gray-50 text-gray-900 leading-relaxed">
-
-  <!-- Header -->
-  <header class="bg-white sticky top-0 z-40 shadow-sm">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <a href="/" class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-bold">T</div>
-          <div>
-            <div class="font-bold text-lg">Trevia</div>
-            <div class="text-xs text-gray-500">Travel Made Timeless</div>
-          </div>
-        </a>
-      </div>
-
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-        <a href="#tours" class="hover:text-amber-600">Tours</a>
-        <a href="#gallery" class="hover:text-amber-600">Gallery</a>
-        <a href="#why" class="hover:text-amber-600">Why Trevia</a>
-        <a href="#contact" class="px-4 py-2 bg-amber-600 text-white rounded-lg">Book Now</a>
-      </nav>
-
-      <div class="md:hidden">
-        <button id="mobileToggle" class="p-2 border rounded-md">Menu</button>
-      </div>
+<body class="font-sans antialiased text-gray-900">
+  <!-- Navbar -->
+  <nav class="bg-white shadow fixed w-full z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-yellow-600">Trevia <span class="italic">Travel Made Timeless</span></h1>
+      <ul class="hidden md:flex space-x-6 font-semibold">
+        <li><a href="#tours" class="hover:text-yellow-600">Tours</a></li>
+        <li><a href="#gallery" class="hover:text-yellow-600">Gallery</a></li>
+        <li><a href="#contact" class="hover:text-yellow-600">Contact</a></li>
+      </ul>
     </div>
-
-    <!-- mobile menu -->
-    <div id="mobileMenu" class="hidden bg-white border-t">
-      <div class="px-6 py-4 flex flex-col gap-3">
-        <a href="#tours">Tours</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#why">Why Trevia</a>
-        <a href="#contact" class="px-4 py-2 bg-amber-600 text-white rounded-lg inline-block">Book Now</a>
-      </div>
-    </div>
-  </header>
+  </nav>
 
   <!-- Hero -->
-  <section class="hero-bg text-white">
-    <div class="max-w-6xl mx-auto px-6 py-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">Trevia Pass</span>
-        <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-tight">Trevia — Travel Made Timeless</h1>
-        <p class="mt-4 text-lg text-amber-100 max-w-xl">Curated Tanzania safaris, coffee experiences and cultural stays. Sustainable partners, trusted guides and flexible departures — designed for travelers who want time well spent.</p>
-
-        <div class="mt-6 flex gap-3">
-          <a href="#tours" class="px-6 py-3 bg-white text-amber-700 rounded-lg font-semibold shadow">Explore Tours</a>
-          <a href="#contact" class="px-6 py-3 border border-white rounded-lg text-white">Request a Quote</a>
-        </div>
-
-        <!-- quick stats -->
-        <div class="mt-8 grid grid-cols-3 gap-4">
-          <div class="bg-white/10 p-3 rounded-lg text-sm">Local Guides<br><strong>100% vetted</strong></div>
-          <div class="bg-white/10 p-3 rounded-lg text-sm">Responsible travel<br><strong>Community projects</strong></div>
-          <div class="bg-white/10 p-3 rounded-lg text-sm">Flexible dates<br><strong>Book or request</strong></div>
-        </div>
-      </div>
-
-      <div class="rounded-2xl overflow-hidden card-shadow">
-        <img src="/assets/hero-side.jpg" alt="Serengeti" class="w-full h-full object-cover" />
-      </div>
+  <section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image:url('assets/hero-large.jpg')">
+    <div class="bg-black bg-opacity-50 w-full h-full absolute top-0 left-0"></div>
+    <div class="text-center text-white relative z-10" data-aos="fade-up">
+      <h2 class="text-5xl font-bold mb-4">Trevia Pass</h2>
+      <p class="text-lg mb-6 italic">Travel Made Timeless</p>
+      <a href="#tours" class="bg-yellow-500 hover:bg-yellow-600 text-white py-3 px-6 rounded">Explore Tours</a>
     </div>
   </section>
 
-  <!-- Tours (dynamic) -->
-  <section id="tours" class="max-w-6xl mx-auto px-6 py-16">
-    <div class="flex items-center justify-between">
-      <div>
-        <h2 class="text-2xl font-extrabold">Featured Tours</h2>
-        <p class="text-gray-600 mt-1">Select a package to view details and book instantly.</p>
-      </div>
-      <div class="text-sm text-gray-500">Filter: <button class="px-2 py-1 bg-gray-100 rounded">All</button> <button class="px-2 py-1 bg-gray-100 rounded">Northern Circuit</button></div>
-    </div>
-
-    <div id="toursGrid" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- JS will inject tour cards here -->
-    </div>
-  </section>
-
-  <!-- Why Trevia -->
-  <section id="why" class="bg-white border-t py-12">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-      <div>
-        <h3 class="text-xl font-bold">Why Trevia</h3>
-        <p class="text-gray-600 mt-2">Local knowledge, ethical practices, and a human touch. We design trips that respect nature and empower communities.</p>
-      </div>
-      <div class="space-y-3">
-        <div class="p-4 bg-gray-50 rounded-lg card-shadow"><strong>Trusted Guides</strong><br><small class="text-gray-500">Experienced rangers and local hosts.</small></div>
-        <div class="p-4 bg-gray-50 rounded-lg card-shadow"><strong>Transparent Pricing</strong><br><small class="text-gray-500">Clear inclusions and park fees.</small></div>
-      </div>
-      <div class="space-y-3">
-        <div class="p-4 bg-gray-50 rounded-lg card-shadow"><strong>Community Works</strong><br><small class="text-gray-500">Support local projects with every booking.</small></div>
-        <div class="p-4 bg-gray-50 rounded-lg card-shadow"><strong>Flexible Dates</strong><br><small class="text-gray-500">Request a quote or book instantly.</small></div>
+  <!-- Featured Tours -->
+  <section id="tours" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Featured Tours</h2>
+      <div id="tours-grid" class="grid md:grid-cols-3 gap-8">
+        <!-- Tours will be injected here -->
       </div>
     </div>
   </section>
 
   <!-- Gallery -->
-  <section id="gallery" class="max-w-6xl mx-auto px-6 py-12">
-    <h3 class="text-xl font-semibold">Gallery</h3>
-    <p class="text-gray-600 mt-1">Swipe through highlights from recent trips.</p>
-    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
-      <a href="/assets/gallery-1.jpg" class="glightbox"><img src="/assets/gallery-1-thumb.jpg" alt="" class="w-full h-44 object-cover rounded-lg" /></a>
-      <a href="/assets/gallery-2.jpg" class="glightbox"><img src="/assets/gallery-2-thumb.jpg" alt="" class="w-full h-44 object-cover rounded-lg" /></a>
-      <a href="/assets/gallery-3.jpg" class="glightbox"><img src="/assets/gallery-3-thumb.jpg" alt="" class="w-full h-44 object-cover rounded-lg" /></a>
-      <a href="/assets/gallery-4.jpg" class="glightbox"><img src="/assets/gallery-4-thumb.jpg" alt="" class="w-full h-44 object-cover rounded-lg" /></a>
-    </div>
-  </section>
-
-  <!-- Contact / Booking -->
-  <section id="contact" class="max-w-6xl mx-auto px-6 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div>
-        <h3 class="text-2xl font-bold">Plan your trip</h3>
-        <p class="text-gray-600 mt-2">Tell us a few details and we'll send a custom quote. For immediate help message WhatsApp at +255 7xx xxx xxx (replace with your number).</p>
-
-        <form id="bookingForm" class="mt-6 space-y-3 bg-white p-6 rounded-lg card-shadow">
-          <input type="text" id="name" placeholder="Full name" required class="w-full p-3 border rounded" />
-          <input type="email" id="email" placeholder="Email" required class="w-full p-3 border rounded" />
-          <div class="grid grid-cols-2 gap-3">
-            <input type="date" id="startDate" class="p-3 border rounded" />
-            <input type="number" id="pax" placeholder="People" min="1" value="2" class="p-3 border rounded" />
-          </div>
-          <select id="tourSelect" class="p-3 border rounded">
-            <option value="custom">Request custom itinerary</option>
-          </select>
-          <textarea id="notes" placeholder="Notes (hotel, interests)" class="w-full p-3 border rounded" rows="4"></textarea>
-
-          <div class="flex items-center gap-3">
-            <button type="submit" class="px-6 py-3 bg-amber-600 text-white rounded font-semibold">Send request</button>
-            <button type="button" id="bookNowBtn" class="px-6 py-3 border rounded">Book & Pay</button>
-          </div>
-          <div id="formMsg" class="text-sm mt-2"></div>
-        </form>
-      </div>
-
-      <div class="space-y-4">
-        <div class="bg-white p-4 rounded-lg card-shadow">
-          <div class="text-sm text-gray-500">Office</div>
-          <div class="font-semibold">Maji ya Chai, Arusha</div>
-          <div class="text-sm text-gray-500 mt-1">Email: hello@treviapass.example</div>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg card-shadow">
-          <div class="font-semibold">Trevia Pass</div>
-          <div class="text-sm text-gray-500">Get discounts, priority booking, and guide credits.</div>
-          <div class="mt-3"><a href="#" class="px-3 py-2 bg-amber-600 text-white rounded">Buy Pass</a></div>
-        </div>
+  <section id="gallery" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Gallery</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="assets/gallery1.jpg" class="glightbox"><img src="assets/gallery1-thumb.jpg" class="w-full rounded"></a>
+        <a href="assets/gallery2.jpg" class="glightbox"><img src="assets/gallery2-thumb.jpg" class="w-full rounded"></a>
+        <a href="assets/gallery3.jpg" class="glightbox"><img src="assets/gallery3-thumb.jpg" class="w-full rounded"></a>
       </div>
     </div>
   </section>
 
-  <footer class="bg-white border-t py-6">
-    <div class="max-w-6xl mx-auto px-6 text-sm text-gray-500 flex justify-between items-center">
-      <div>© <span id="year"></span> Trevia · Travel Made Timeless</div>
-      <div>Built with ❤️ · <a href="#" class="text-amber-600">Privacy</a></div>
+  <!-- Contact -->
+  <section id="contact" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Plan Your Trip</h2>
+      <form id="tripForm" class="max-w-xl mx-auto bg-white shadow-lg rounded-lg p-8">
+        <div class="mb-4">
+          <label class="block mb-2 font-semibold">Name</label>
+          <input type="text" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-semibold">Email</label>
+          <input type="email" class="w-full border rounded px-3 py-2" required>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-2 font-semibold">Message</label>
+          <textarea class="w-full border rounded px-3 py-2" rows="4"></textarea>
+        </div>
+        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded">Send Inquiry</button>
+      </form>
     </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-6 text-center">
+    <p>&copy; 2025 Trevia. Travel Made Timeless.</p>
   </footer>
 
-
-  <!-- Scripts: AOS, GLightbox -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // ========== Config - replace WEBHOOK_URL with your form webhook (Formspree, Getform, or custom serverless endpoint)
-    const WEBHOOK_URL = 'REPLACE_WITH_YOUR_WEBHOOK_URL'
+    AOS.init();
+    const lightbox = GLightbox({ selector: '.glightbox' });
 
-    // Sample tours (you can split into /data/tours.json in repo)
-    const TOURS = [
-      { id:'tarangire-3d', title:'Tarangire & Manyara — 3 Days', price:399, days:3, excerpt:'Game drives, baobabs and flamingos', img:'/assets/tar-1.jpg' },
-      { id:'ngorongoro-day', title:'Ngorongoro Crater — Day Trip', price:320, days:1, excerpt:'Crater wildlife with picnic lunch', img:'/assets/ngor-1.jpg' },
-      { id:'coffee-half', title:'Coffee & Culture — Maji ya Chai', price:55, days:0.5, excerpt:'Farm visit and tasting', img:'/assets/coffee-1.jpg' }
-    ]
+    // Airtable config - replace with your real values
+    const AIRTABLE_BASE = "YOUR_BASE_ID"; 
+    const AIRTABLE_TABLE = "Tours"; 
+    const AIRTABLE_KEY = "YOUR_API_KEY"; 
 
-    // populate tours on page
-    const toursGrid = document.getElementById('toursGrid')
-    const tourSelect = document.getElementById('tourSelect')
-    TOURS.forEach(t => {
-      const card = document.createElement('div')
-      card.className = 'bg-white rounded-2xl overflow-hidden card-shadow'
-      card.innerHTML = `
-        <img src="${t.img}" alt="${t.title}" class="w-full h-48 object-cover" />
-        <div class="p-4">
-          <div class="flex items-start justify-between">
-            <div>
-              <h4 class="font-semibold">${t.title}</h4>
-              <div class="text-sm text-gray-500">${t.days} ${t.days>1?'days':'day'}</div>
+    async function loadTours() {
+      const res = await fetch(
+        `https://api.airtable.com/v0/${AIRTABLE_BASE}/${AIRTABLE_TABLE}?view=Grid%20view`,
+        { headers: { Authorization: `Bearer ${AIRTABLE_KEY}` } }
+      );
+      const data = await res.json();
+      const container = document.getElementById("tours-grid");
+      container.innerHTML = "";
+
+      data.records.forEach(rec => {
+        const t = rec.fields;
+        container.innerHTML += `
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden" data-aos="fade-up">
+            <img src="${t.ImageURL ? t.ImageURL[0].url : 'assets/placeholder.jpg'}" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold mb-2">${t.Title || ''}</h3>
+              <p class="text-gray-600 mb-2">${t.Days || ''} days</p>
+              <p class="text-yellow-600 font-bold mb-2">$${t.Price || ''}</p>
+              <p class="text-gray-700 mb-4">${t.Description || ''}</p>
+              <button class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded">Book Now</button>
             </div>
-            <div class="text-amber-600 font-bold">$${t.price}</div>
           </div>
-          <p class="text-gray-600 mt-3">${t.excerpt}</p>
-          <div class="mt-4 flex gap-2">
-            <button class="px-3 py-2 bg-amber-600 text-white rounded" onclick="viewTour('${t.id}')">View</button>
-            <button class="px-3 py-2 border rounded" onclick="selectTour('${t.id}')">Book</button>
-          </div>
-        </div>
-      `
-      toursGrid.appendChild(card)
-
-      // add to booking select
-      const opt = document.createElement('option')
-      opt.value = t.id
-      opt.textContent = t.title + ' — $' + t.price
-      tourSelect.appendChild(opt)
-    })
-
-    function viewTour(id){
-      const t = TOURS.find(x=>x.id===id)
-      alert(`${t.title}\n\n${t.excerpt}\nPrice: $${t.price}`)
-    }
-    function selectTour(id){
-      document.getElementById('tourSelect').value = id
-      document.getElementById('startDate').focus()
-      window.scrollTo({top:document.getElementById('contact').offsetTop - 80, behavior:'smooth'})
+        `;
+      });
     }
 
-    // Mobile menu
-    const mobileToggle = document.getElementById('mobileToggle')
-    const mobileMenu = document.getElementById('mobileMenu')
-    mobileToggle.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'))
-
-    // Init AOS and GLightbox
-    AOS.init({duration:700, once:true})
-    const lightbox = GLightbox({ selector: '.glightbox' })
-
-    // Booking form submit
-    const bookingForm = document.getElementById('bookingForm')
-    const formMsg = document.getElementById('formMsg')
-    bookingForm.addEventListener('submit', async (e) => {
-      e.preventDefault()
-      formMsg.textContent = 'Sending...'
-
-      const payload = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        startDate: document.getElementById('startDate').value,
-        pax: document.getElementById('pax').value,
-        tour: document.getElementById('tourSelect').value,
-        notes: document.getElementById('notes').value,
-        createdAt: new Date().toISOString()
-      }
-
-      try{
-        if(!WEBHOOK_URL || WEBHOOK_URL.includes('REPLACE_WITH')){
-          // fallback: store in localStorage so you don't lose data while setting webhook
-          const store = JSON.parse(localStorage.getItem('trevia_inquiries') || '[]')
-          store.push(payload)
-          localStorage.setItem('trevia_inquiries', JSON.stringify(store))
-          formMsg.textContent = 'Saved locally. Add a webhook in the code to send inquiries automatically.'
-          bookingForm.reset()
-          return
-        }
-
-        const res = await fetch(WEBHOOK_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)})
-        if(res.ok){
-          formMsg.textContent = 'Thanks — your request is received. We will reply shortly.'
-          bookingForm.reset()
-        } else {
-          formMsg.textContent = 'Submission failed. Check webhook or network.'
-        }
-      }catch(err){
-        console.error(err)
-        formMsg.textContent = 'There was an error. Data saved locally.'
-        const store = JSON.parse(localStorage.getItem('trevia_inquiries') || '[]')
-        store.push(payload)
-        localStorage.setItem('trevia_inquiries', JSON.stringify(store))
-      }
-    })
-
-    // Book & Pay button - placeholder for Stripe flow
-    document.getElementById('bookNowBtn').addEventListener('click', ()=>{
-      alert('Stripe Checkout or payment flow can be implemented here. I can add serverless code for that next.')
-    })
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear()
+    loadTours();
   </script>
-
 </body>
 </html>
