@@ -26,32 +26,53 @@
       align-items: center;
       justify-content: center;
       z-index: 2000;
+      overflow: hidden;
     }
 
     #loader svg {
-      width: 180px;
-      height: 180px;
-      fill: #f4d03f;
-      animation: pulse 2s ease-in-out infinite;
+      width: 200px;
+      height: 200px;
       filter: drop-shadow(0 0 25px #f4d03f);
+      animation: pulse 2s ease-in-out infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
+      0%,100%{ transform: scale(1); opacity: 1; }
       50% { transform: scale(1.2); opacity: 0.7; }
     }
 
     .safari-icon {
       position: absolute;
-      width: 40px;
-      height: 40px;
-      animation: bounce 2s infinite alternate;
+      width: 40px; height: 40px;
     }
 
-    @keyframes bounce {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
+    /* Animations along the T */
+    #lion { animation: lionPath 15s linear infinite; }
+    #elephant { animation: elephantPath 15s linear infinite; }
+    #giraffe { animation: giraffePath 15s linear infinite; }
+
+    @keyframes lionPath {
+      0% { top: 30%; left: 35%; }
+      25% { top: 30%; left: 65%; }
+      50% { top: 50%; left: 50%; }
+      75% { top: 70%; left: 50%; }
+      100% { top: 30%; left: 35%; }
+    }
+
+    @keyframes elephantPath {
+      0% { top: 60%; left: 30%; }
+      25% { top: 60%; left: 60%; }
+      50% { top: 55%; left: 50%; }
+      75% { top: 70%; left: 55%; }
+      100% { top: 60%; left: 30%; }
+    }
+
+    @keyframes giraffePath {
+      0% { top: 40%; left: 40%; }
+      25% { top: 40%; left: 60%; }
+      50% { top: 50%; left: 55%; }
+      75% { top: 60%; left: 50%; }
+      100% { top: 40%; left: 40%; }
     }
 
     #loader.hidden {
@@ -159,25 +180,13 @@
 
   <!-- Loader -->
   <div id="loader">
-    <svg viewBox="0 0 512 512">
-      <path d="M242.3,10.1c-21.5,4.5-40.2,15.1-57.7,29.1c-14.3,11-27.5,23.6-38.4,37.9c-7.2,9-13.8,18.6-18.9,29.3
-      c-7.6,16.3-13,33.5-17.5,50.8c-2.8,10.6-5.5,21.2-7.9,31.9c-2.1,9-4,18.2-5.3,27.3c-1.4,10.1-2.7,20.2-3.2,30.4
-      c-0.6,12.8,0.6,25.7,1.6,38.5c0.5,6.4,1.2,12.8,2.3,19.2c1.1,6.8,2.5,13.5,4.3,20.2c3.1,11.6,7.2,22.9,12.5,33.6
-      c4.5,9.3,10.1,18.2,16.1,26.7c7.3,10.2,15.5,19.9,24.2,29c13.3,14.1,27.7,27.3,42.7,39.2c10.5,8.3,21.6,16,33.4,22.9
-      c12.7,7.4,25.7,14,39,20c12.3,5.4,24.9,10.2,37.7,14.1c7.5,2.3,15.1,4.2,22.7,5.5c8.7,1.5,17.5,2.3,26.3,2.3
-      c9.8,0,19.6-0.9,29.3-2.4c14.6-2.3,28.9-6.6,42.6-12.2c13.2-5.3,26.1-11.8,38.7-19c11.8-6.8,23-14.6,33.6-23.1
-      c12.5-10.2,24.5-21.1,35.5-32.9c9.1-9.9,17.6-20.3,25.5-31.2c7.6-10.3,14.6-21.1,20.9-32.4c6.8-12.1,12.9-24.5,18.2-37.2
-      c4.1-10.1,7.9-20.4,11.3-30.7c3-9,5.7-18.2,8.2-27.4c2.7-10.3,5.2-20.6,7.5-31c2.7-11.7,5.1-23.5,7-35.3c2.1-13.2,3.8-26.5,5-39.8
-      c1.2-12.8,2.2-25.6,2.3-38.5c0-11.2-0.2-22.4-0.8-33.6c-0.5-9.5-1.1-19-2.2-28.5c-1.5-14.1-3.5-28.2-6.2-42.2c-2.2-11.6-5-23.1-8.4-34.5
-      c-3.4-11.5-7.5-22.8-12.1-33.9c-5.7-13.4-12-26.6-19-39.4c-7-12.7-14.7-25-23.3-36.8c-8.1-11-17.1-21.6-26.7-31.7
-      c-12.8-13.8-26.5-26.9-41.1-39c-12.2-10.4-25-20.1-38.5-28.8c-13.3-8.5-27.2-16.1-41.5-22.8c-15-7.1-30.3-13-45.9-17.6
-      c-12.5-3.8-25.2-6.8-37.9-9.1C268.1,6.5,255.2,6,242.3,10.1z"/>
+    <svg viewBox="0 0 200 200">
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="150" font-family="Verdana" fill="#f4d03f">T</text>
     </svg>
 
-    <!-- Safari icons -->
-    <img src="assets/lion.png" class="safari-icon" style="top:30%; left:40%;">
-    <img src="assets/elephant.png" class="safari-icon" style="top:60%; left:50%;">
-    <img src="assets/giraffe.png" class="safari-icon" style="top:45%; left:65%;">
+    <img src="assets/lion.png" class="safari-icon" id="lion">
+    <img src="assets/elephant.png" class="safari-icon" id="elephant">
+    <img src="assets/giraffe.png" class="safari-icon" id="giraffe">
   </div>
 
   <!-- Header -->
@@ -264,7 +273,8 @@
     // Sticky header
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 50);
+      if(window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
     });
 
     // Swiper initialization
