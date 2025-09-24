@@ -32,7 +32,6 @@ body {
 
 #loader svg { width: 200px; height: 200px; }
 
-/* Rotating shimmering circle */
 #loader-circle {
   transform-origin: 50% 50%;
   stroke-dasharray: 502;
@@ -47,7 +46,6 @@ body {
   100% { transform: rotate(360deg) scale(1); }
 }
 
-/* Particle trails */
 .particle {
   fill: #fff8aa;
   opacity: 0.8;
@@ -195,7 +193,6 @@ section h2 { margin-bottom: 20px; font-size: 2em; }
 footer { background: #333; color: #fff; text-align: center; padding: 20px; }
 
 html { scroll-behavior: smooth; }
-
 </style>
 </head>
 <body>
@@ -268,6 +265,12 @@ html { scroll-behavior: smooth; }
       <img src="assets/tour3.jpg" alt="Zanzibar Getaway">
       <h3>Zanzibar Getaway</h3>
       <p>Relax on white sandy beaches and dive into rich cultural heritage.</p>
+    </div>
+    <!-- Kilimanjaro Hiking -->
+    <div class="tour-card" id="kilimanjaro">
+      <img src="assets/kilimanjaro.jpg" alt="Kilimanjaro Hiking">
+      <h3>Kilimanjaro Hiking</h3>
+      <p>Embark on an unforgettable trek to the roof of Africa and experience breathtaking views.</p>
     </div>
   </div>
 </section>
@@ -347,9 +350,7 @@ window.addEventListener('load', () => {
     document.getElementById('hero-text').classList.add('show');
 
     const heroSubtitle = document.querySelectorAll('#hero-subtitle span');
-    heroSubtitle.forEach((word,index)=>{
-      setTimeout(()=>word.classList.add('show'), index*400);
-    });
+    heroSubtitle.forEach((word,index)=>{ setTimeout(()=>word.classList.add('show'), index*400); });
 
     animateParticles();
   },10000);
