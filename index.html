@@ -26,14 +26,14 @@
       align-items: center;
       justify-content: center;
       z-index: 2000;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
 
     #loader svg {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       fill: #f4d03f;
-      animation: spin 2s linear infinite;
+      animation: pulse 1.8s ease-in-out infinite, spin 2s linear infinite;
+      filter: drop-shadow(0 0 15px #f4d03f);
     }
 
     @keyframes spin {
@@ -41,9 +41,15 @@
       100% { transform: rotate(360deg); }
     }
 
+    @keyframes pulse {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+      50% { transform: scale(1.2) rotate(180deg); opacity: 0.7; }
+    }
+
     #loader.hidden {
       opacity: 0;
       visibility: hidden;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
     }
 
     /* Sticky Header */
@@ -226,10 +232,10 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <script>
-    // Loader fade out
+    // Loader fade out after min 2s
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader');
-      loader.classList.add('hidden');
+      setTimeout(() => loader.classList.add('hidden'), 2000);
     });
 
     // Sticky header
@@ -238,7 +244,7 @@
       header.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Initialize Swiper
+    // Swiper initialization
     const swiper = new Swiper(".mySwiper", {
       loop: true,
       pagination: { el: ".swiper-pagination", clickable: true },
