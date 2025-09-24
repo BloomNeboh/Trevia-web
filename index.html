@@ -32,12 +32,18 @@
     #loader svg {
       width: 200px;
       height: 200px;
-      animation: pulse 2s ease-in-out infinite;
     }
 
-    @keyframes pulse {
-      0%,100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.7; }
+    /* Circle rotation animation */
+    #loader-circle {
+      transform-origin: 50% 50%;
+      animation: rotateCircle 2s linear infinite;
+    }
+
+    @keyframes rotateCircle {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.1); }
+      100% { transform: rotate(360deg) scale(1); }
     }
 
     #loader.hidden {
@@ -146,8 +152,8 @@
   <!-- Loader -->
   <div id="loader">
     <svg viewBox="0 0 200 200">
-      <!-- Circle -->
-      <circle cx="100" cy="100" r="80" stroke="#f4d03f" stroke-width="8" fill="none" />
+      <!-- Rotating Circle -->
+      <circle id="loader-circle" cx="100" cy="100" r="80" stroke="#f4d03f" stroke-width="8" fill="none" />
       <!-- Big "T" -->
       <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="120" font-family="Verdana" fill="#f4d03f">T</text>
     </svg>
@@ -228,10 +234,10 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <script>
-    // Loader fade out after 15 seconds
+    // Loader fade out after 10 seconds
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader');
-      setTimeout(() => loader.classList.add('hidden'), 15000);
+      setTimeout(() => loader.classList.add('hidden'), 10000);
     });
 
     // Sticky header
