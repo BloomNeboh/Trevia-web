@@ -29,21 +29,41 @@
       overflow: hidden;
     }
 
-    #loader svg {
-      width: 200px;
-      height: 200px;
-    }
+    #loader svg { width: 200px; height: 200px; }
 
-    /* Circle rotation animation */
+    /* Rotating and shimmering circle */
     #loader-circle {
       transform-origin: 50% 50%;
-      animation: rotateCircle 2s linear infinite;
+      stroke-dasharray: 502;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      animation: rotateCircle 2s linear infinite, shimmer 1.5s ease-in-out infinite;
     }
 
     @keyframes rotateCircle {
       0% { transform: rotate(0deg) scale(1); }
       50% { transform: rotate(180deg) scale(1.1); }
       100% { transform: rotate(360deg) scale(1); }
+    }
+
+    @keyframes shimmer {
+      0% { stroke: #f4d03f; stroke-width: 8; }
+      50% { stroke: #fff; stroke-width: 10; }
+      100% { stroke: #f4d03f; stroke-width: 8; }
+    }
+
+    /* Book opening effect for "T" */
+    #loader-text {
+      transform-origin: 50% 50%;
+      transform: rotateY(90deg) scale(0.5);
+      opacity: 0;
+      animation: bookOpen 2s forwards 0.5s;
+    }
+
+    @keyframes bookOpen {
+      0% { transform: rotateY(90deg) scale(0.5); opacity: 0; }
+      50% { transform: rotateY(45deg) scale(0.8); opacity: 0.5; }
+      100% { transform: rotateY(0deg) scale(1); opacity: 1; }
     }
 
     #loader.hidden {
@@ -152,10 +172,10 @@
   <!-- Loader -->
   <div id="loader">
     <svg viewBox="0 0 200 200">
-      <!-- Rotating Circle -->
+      <!-- Rotating Glowing Circle -->
       <circle id="loader-circle" cx="100" cy="100" r="80" stroke="#f4d03f" stroke-width="8" fill="none" />
-      <!-- Big "T" -->
-      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="120" font-family="Verdana" fill="#f4d03f">T</text>
+      <!-- Big "T" with Book Opening Effect -->
+      <text id="loader-text" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="120" font-family="Verdana" fill="#f4d03f">T</text>
     </svg>
   </div>
 
