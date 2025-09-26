@@ -1,73 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nyota Adventures – Discover Tanzania</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trevia — Travel Made Timeless</title>
+  <meta name="description" content="Trevia Tailor-made safaris, Kilimanjaro climbs and Zanzibar escapes. Travel made timeless." />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Hero -->
-  <section id="hero">
-    <div class="overlay">
-      <h1><span id="typed-text"></span></h1>
-      <p>Climb, Safari, Explore – Tanzania awaits you.</p>
-      <a href="#tours" class="btn">Explore Tours</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="#">
+  <img src="assets/img/trevia-logo.png" alt="Trevia logo" class="logo-img">
+</a>
+      <nav id="nav" class="nav">
+        <a href="#trips">Trips</a>
+        <a href="#why">Why Trevia</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <button class="btn btn-ghost" id="requestBtn">Request Proposal</button>
+      </nav>
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
     </div>
-  </section>
+  </header>
 
-  <!-- Tours -->
-  <section id="tours">
-    <h2>Our Top Adventures</h2>
-    <div class="tour-container" id="tour-list"></div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" aria-label="Trevia hero">
+      <div class="hero-bg" role="img" aria-label="Serengeti sunrise"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="title">Trevia</h1>
+          <p class="lead">Travel made timeless handcrafted safaris, island stays, and mountain climbs.</p>
+          <p class="sub">From the plains of Serengeti to the spices of Zanzibar we design your rhythm, not a schedule.</p>
+          <div class="trust">
+            <span></span>
+            <span>· Tailor-made · Local guides</span>
+          </div>
+        </div>
 
-  <!-- Booking -->
-  <section id="booking">
-    <h2>Book Your Experience</h2>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Full Name" required/>
-      <input type="email" name="email" placeholder="Email" required/>
-      <input type="date" name="date" required/>
-      <input type="number" name="travelers" placeholder="Travelers" required/>
-      <textarea name="message" placeholder="Tell us your dream trip..."></textarea>
-      <button type="submit">Book Now</button>
-    </form>
-  </section>
+        <aside class="booking-card" aria-labelledby="bookingHeading">
+          <h3 id="bookingHeading">Start your plan</h3>
+          <form id="bookingForm" class="form">
+            <label>
+              Destination
+              <select name="destination" required>
+                <option value="serengeti">Serengeti & Northern Circuit</option>
+                <option value="ngorongoro">Ngorongoro & Manyara</option>
+                <option value="zanzibar">Zanzibar Beach</option>
+                <option value="kilimanjaro">Kilimanjaro Climb</option>
+              </select>
+            </label>
 
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <h2>What Our Guests Say</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">"The Serengeti was life-changing!" – Anna</div>
-        <div class="swiper-slide">"Kilimanjaro pushed me, but Nyota guided me all the way." – David</div>
-        <div class="swiper-slide">"Zanzibar beaches... pure magic." – Sofia</div>
+            <div class="grid-2">
+              <label>
+                Arrival
+                <input name="arrival" type="date" required />
+              </label>
+              <label>
+                Nights
+                <input name="nights" type="number" min="1" value="5" required />
+              </label>
+            </div>
+
+            <div class="grid-2">
+              <label>
+                Adults
+                <input name="adults" type="number" min="1" value="2" />
+              </label>
+              <label>
+                Children
+                <input name="children" type="number" min="0" value="0" />
+              </label>
+            </div>
+
+            <button class="btn" type="submit">Request proposal</button>
+            <small class="muted">No commitment we design then you decide.</small>
+          </form>
+        </aside>
       </div>
+    </section>
+
+    <!-- TRIPS -->
+    <section id="trips" class="container section">
+      <h2 class="section-title">Featured Trips</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="https://source.unsplash.com/800x600/?serengeti" alt="Serengeti safari">
+          <div class="card-body">
+            <h3>Serengeti Migration – 7 days</h3>
+            <p class="price">From <strong>$2,880</strong></p>
+            <ul>
+              <li>Game drives at dawn & dusk</li>
+              <li>All transfers & park fees</li>
+              <li>Comfort lodges & tented camps</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-sm">Request details</a>
+              <a href="#" class="link">View sample itinerary</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://source.unsplash.com/800x600/?kilimanjaro" alt="Kilimanjaro">
+          <div class="card-body">
+            <h3>Kilimanjaro Classic – 6 days</h3>
+            <p class="price">From <strong>$2,450</strong></p>
+            <ul>
+              <li>Guided climb, safety support</li>
+              <li>Acclimatisation & transfers</li>
+              <li>Experienced mountain guides</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-sm">Request details</a>
+              <a href="#" class="link">What's included</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://source.unsplash.com/800x600/?zanzibar,beach" alt="Zanzibar beach">
+          <div class="card-body">
+            <h3>Zanzibar Escape – 4 days</h3>
+            <p class="price">From <strong>$1200</strong></p>
+            <ul>
+              <li>Luxury beach lodge</li>
+              <li>Spice tour & Stone Town walk</li>
+              <li>Private transfers</li>
+            </ul>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-sm">Request details</a>
+              <a href="#" class="link">Combine with safari</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+<article class="card">
+  <div class="badge">Popular</div>
+  <img src="assets/img/serengeti-trip.jpg" alt="Serengeti Migration">
+  <!-- rest of card -->
+</article>
+
+    <!-- WHY US -->
+    <section id="why" class="section alt">
+      <div class="container why-grid">
+        <div>
+          <h2>Why Trevia?</h2>
+          <p>Local experts. Ethical partners. Trips shaped to your tempo not ours. Practical, personalized, and unforgettable.</p>
+          <ul class="features">
+            <li>Tailor-made itineraries</li>
+            <li>Responsible travel & community support</li>
+            <li>Flexible payment & free proposals</li>
+          </ul>
+        </div>
+        <div class="cta-card">
+          <h3>Plan with a local expert</h3>
+          <p>Send your preferences we will return a custom plan and quote within 48 hours.</p>
+          <button class="btn" id="fastRequest">Send a request</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="container section">
+      <h2 class="section-title">What travellers say</h2>
+      <div class="reviews" aria-live="polite">
+        <blockquote class="review active">
+          “Trevia crafted our dream safari guides, food, tents that was perfect.” <cite>— L. Morales</cite>
+        </blockquote>
+        <blockquote class="review">
+          “Seamless transfers and the best guide. Highly recommended.” <cite>— J. Okoye</cite>
+        </blockquote>
+        <blockquote class="review">
+          “Kilimanjaro team were pro and encouraging we made it to the summit!” <cite>— S. Chen</cite>
+        </blockquote>
+      </div>
+    </section>
+<blockquote class="review active">
+  <div class="stars">★★★★☆</div>
+  “Trevia crafted… perfect.” <cite>— L. Morales</cite>
+</blockquote>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container contact-grid">
+        <div>
+          <h2>Get in touch</h2>
+          <p>Tell us the trip you dream of — we’ll do the planning, reservations and guide selection.</p>
+          <address>
+            Trevia Tours · Arusha, Tanzania<br>
+            <a href="mailto:treviatours@gmail.com">treviatours@gmail.com</a> · +255 757 716 749
+          </address>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+          <label>
+            Name
+            <input name="name" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="muted">© <span id="year"></span> Trevia. Travel made timeless.</p>
+      <p class="muted">Follow: <a href="#">Instagram</a> · <a href="#">Facebook</a></p>
     </div>
-  </section>
-
-  <!-- Map -->
-  <section id="map">
-    <h2>Discover Tanzania</h2>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1uMbDs1q9NyTanzaniaMap" width="100%" height="480"></iframe>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Nyota Adventures | Designed by Neboh</p>
-    <a href="https://wa.me/255YOURNUMBER" target="_blank">WhatsApp Us</a> | 
-    <a href="mailto:info@nyota.com">Email</a>
   </footer>
 
-  <!-- JS -->
-  <script src="js/tours.js"></script>
-  <script src="js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.mySwiper', { loop: true, autoplay: { delay: 3000 } });
-  </script>
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
