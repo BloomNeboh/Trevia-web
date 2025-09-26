@@ -27,6 +27,8 @@
   font-size: 13px;
   text-transform: uppercase;
 }
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 
 *{box-sizing:border-box}
 html,body{height:100%}
